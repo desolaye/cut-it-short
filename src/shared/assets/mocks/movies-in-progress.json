@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 4,
+      "title": "Предсказание",
+      "duration": 165,
+      "inProgress": true,
+      "watchTime": 126,
+      "description": "",
+      "rating": { "text": "9.8", "mode": "good" },
+      "tags": [
+        { "text": "Романтическая комедия" },
+        { "text": "16 мин 55 сек" },
+        { "text": "Россия" },
+        { "text": "2023" }
+      ],
+      "image": "/movies/1.png"
+    },
+    {
+      "id": 5,
+      "title": "Вкус",
+      "duration": 165,
+      "inProgress": false,
+      "watchTime": 79,
+      "description": "",
+      "rating": { "text": "9.6", "mode": "good" },
+      "tags": [
+        { "text": "Романтическая комедия" },
+        { "text": "16 мин 55 сек" },
+        { "text": "Россия" },
+        { "text": "2023" }
+      ],
+      "image": "/movies/1.png"
+    }
+  ]
+}

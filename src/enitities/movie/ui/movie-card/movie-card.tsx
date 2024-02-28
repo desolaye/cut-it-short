@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
-import { IMovie } from '@/src/enitities/movie'
-import { Tag } from '../tag'
+import { Tag } from '@/src/shared/ui/tag'
+import { IMovie } from '../../lib/movie.interface'
 
 interface IMovieCardProps {
   movie: IMovie
@@ -15,15 +15,16 @@ export const MovieCard = (props: IMovieCardProps) => {
 
   const classes = classNames(
     className,
-    'p-8 w-full bg-center bg-no-repeat bg-cover flex flex-col rounded justify-between',
+    'p-8 w-full bg-center bg-no-repeat flex flex-col rounded justify-between transition-all text-left',
     {
-      'min-h-[600px]': size === 'l',
-      'min-h-[290px]': size === 'm' || typeof size === 'undefined',
+      'min-h-[600px] bg-130% hover:bg-140%': size === 'l',
+      'min-h-[290px] bg-110% hover:bg-120%':
+        size === 'm' || typeof size === 'undefined',
     },
   )
 
   return (
-    <section className={classes} style={{ backgroundImage: `url("${img}")` }}>
+    <button className={classes} style={{ backgroundImage: `url("${img}")` }}>
       <header className="flex gap-2">
         <Tag mode={movie.rating.mode}>{movie.rating.text}</Tag>
         {size === 'l' &&
@@ -35,9 +36,9 @@ export const MovieCard = (props: IMovieCardProps) => {
       </header>
       <main className="flex flex-col gap-4">
         <p className="text-4xl text-x-main">{movie.title}</p>
-        <p>{movie.description}</p>
+        <p className="truncate">{movie.description}</p>
       </main>
-    </section>
+    </button>
   )
 }
 

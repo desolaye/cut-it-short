@@ -14,6 +14,13 @@ const config: Config = {
         'x-yellow': '#E7B70D',
         'x-red': '#DE2422',
       },
+      backgroundSize: {
+        full: '100%',
+        '110%': '110%',
+        '120%': '120%',
+        '130%': '130%',
+        '140%': '140%',
+      },
     },
   },
   plugins: [],
