@@ -23,6 +23,11 @@ export const MovieCard = (props: IMovieCardProps) => {
     },
   )
 
+  const textClassName = classNames('text-x-main', {
+    'text-2xl': size === 'm' || typeof size === 'undefined',
+    'text-4xl': size === 'l',
+  })
+
   return (
     <button className={classes} style={{ backgroundImage: `url("${img}")` }}>
       <header className="flex gap-2">
@@ -35,7 +40,7 @@ export const MovieCard = (props: IMovieCardProps) => {
           ))}
       </header>
       <main className="flex flex-col gap-4">
-        <p className="text-4xl text-x-main">{movie.title}</p>
+        <p className={textClassName}>{movie.title}</p>
         <p className="truncate">{movie.description}</p>
       </main>
     </button>

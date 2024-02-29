@@ -6,6 +6,8 @@ import { MovieCard } from '@/src/enitities/movie'
 
 import ChevronRightIcon from '@/src/shared/assets/icons/chevron-right-icon.svg'
 import { MovieInProgress } from '@/src/enitities/movie/ui/movie-in-progress/movie-in-progress'
+import { MovieCategoryList } from '@/src/widgets/movie-category-list'
+import { Faq } from '@/src/widgets/faq'
 
 const getMovies = async () => {
   const file = await fs.readFile(
@@ -43,24 +45,26 @@ export const HomePage = async () => {
           <p className="font-thin">]</p>
         </div>
       </header>
-      <main className="flex flex-col gap-4">
-        <section className="grid grid-cols-5 grid-rows-2 gap-4">
-          {movies.map((v, i) => (
-            <MovieCard
-              key={v.id}
-              movie={v}
-              size={i === 0 ? 'l' : 'm'}
-              className={i === 0 ? 'col-span-3 row-span-2' : 'col-span-2'}
-              img={v.image}
-            />
-          ))}
+      <main className="flex flex-col gap-20">
+        <section className="flex flex-col gap-8">
+          <main className="grid grid-cols-5 grid-rows-2 gap-4">
+            {movies.map((v, i) => (
+              <MovieCard
+                key={v.id}
+                movie={v}
+                size={i === 0 ? 'l' : 'm'}
+                className={i === 0 ? 'col-span-3 row-span-2' : 'col-span-2'}
+                img={v.image}
+              />
+            ))}
+          </main>
+          <footer className="flex justify-center">
+            <Button mode="text" icon={<ChevronRightIcon />}>
+              Смотреть все
+            </Button>
+          </footer>
         </section>
-        <section className="flex justify-center">
-          <Button mode="text" icon={<ChevronRightIcon />}>
-            Смотреть все
-          </Button>
-        </section>
-        <section className="flex flex-col gap-10 pt-20">
+        <section className="flex flex-col gap-10">
           <p className="text-3xl text-x-main">Продолжить просмотр</p>
           <main className="flex gap-4">
             {inProgress.map((val) => (
@@ -68,7 +72,10 @@ export const HomePage = async () => {
             ))}
           </main>
         </section>
+        <MovieCategoryList title="Для грустного настроения" movies={movies} />
+        <MovieCategoryList title="Зарубежные фильмы" movies={movies} />
       </main>
+      <Faq />
     </section>
   )
 }
