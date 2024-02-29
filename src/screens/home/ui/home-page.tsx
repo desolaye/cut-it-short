@@ -8,6 +8,7 @@ import ChevronRightIcon from '@/src/shared/assets/icons/chevron-right-icon.svg'
 import { MovieInProgress } from '@/src/enitities/movie/ui/movie-in-progress/movie-in-progress'
 import { MovieCategoryList } from '@/src/widgets/movie-category-list'
 import { Faq } from '@/src/widgets/faq'
+import { ShareMovies } from '@/src/widgets/share-movies'
 
 const getMovies = async () => {
   const file = await fs.readFile(
@@ -64,6 +65,7 @@ export const HomePage = async () => {
             </Button>
           </footer>
         </section>
+        <ShareMovies />
         <section className="flex flex-col gap-10">
           <p className="text-3xl text-x-main">Продолжить просмотр</p>
           <main className="flex gap-4">
