@@ -15,10 +15,10 @@ export const MovieCard = (props: IMovieCardProps) => {
 
   const classes = classNames(
     className,
-    'p-8 w-full bg-center bg-no-repeat flex flex-col rounded justify-between transition-all text-left',
+    'p-8 w-full bg-center bg-no-repeat flex flex-col rounded justify-between transition-all text-left full_img',
     {
-      'min-h-[600px] bg-130% hover:bg-140%': size === 'l',
-      'min-h-[290px] bg-110% hover:bg-120%':
+      'min-h-[600px]': size === 'l',
+      'min-h-[290px]':
         size === 'm' || typeof size === 'undefined',
     },
   )
@@ -46,5 +46,3 @@ export const MovieCard = (props: IMovieCardProps) => {
     </button>
   )
 }
-
-//

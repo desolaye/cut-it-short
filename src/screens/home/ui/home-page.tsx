@@ -65,7 +65,6 @@ export const HomePage = async () => {
             </Button>
           </footer>
         </section>
-        <ShareMovies />
         <section className="flex flex-col gap-10">
           <p className="text-3xl text-x-main">Продолжить просмотр</p>
           <main className="flex gap-4">
@@ -74,6 +73,7 @@ export const HomePage = async () => {
             ))}
           </main>
         </section>
+        <ShareMovies />
         <MovieCategoryList title="Для грустного настроения" movies={movies} />
         <MovieCategoryList title="Зарубежные фильмы" movies={movies} />
       </main>
